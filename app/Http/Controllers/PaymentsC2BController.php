@@ -209,7 +209,7 @@ class PaymentsC2BController extends Controller
          curl_setopt($curl, CURLOPT_POST, true);
          curl_setopt($curl, CURLOPT_POSTFIELDS, $data_string);
          $curl_response = curl_exec($curl);
-         return gettype($curl_response);
+         return $curl_response;
         // $mpesa= new \Safaricom\Mpesa\Mpesa();
 
         // $stkPushSimulation=$mpesa->STKPushSimulation(174379, $LipaNaMpesaPasskey, $TransactionType, $Amount, $PartyA, $PartyB, $PhoneNumber, $CallBackURL, $AccountReference, $TransactionDesc, $Remarks);
