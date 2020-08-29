@@ -192,7 +192,7 @@ class PaymentsC2BController extends Controller
          $curl_post_data = [
              //Fill in the request parameters with valid values
              'BusinessShortCode' => 174379,
-             'Password' => $this->lipaNaMpesaPassword(),
+             'Password' => 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919',
              'Timestamp' => Carbon::rawParse('now')->format('YmdHms'),
              'TransactionType' => 'CustomerPayBillOnline',
              'Amount' => 5,
