@@ -8,93 +8,6 @@ use Carbon\Carbon;
 
 class PaymentsC2BController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\PaymentsC2B  $paymentsC2B
-     * @return \Illuminate\Http\Response
-     */
-    public function show(PaymentsC2B $paymentsC2B)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\PaymentsC2B  $paymentsC2B
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(PaymentsC2B $paymentsC2B)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\PaymentsC2B  $paymentsC2B
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, PaymentsC2B $paymentsC2B)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\PaymentsC2B  $paymentsC2B
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(PaymentsC2B $paymentsC2B)
-    {
-        //
-    }
-    public function makePayment(){
-        $mpesa= new \Safaricom\Mpesa\Mpesa();
-
-        // $b2bTransaction=$mpesa->c2b($ShortCode, $CommandID, $Amount, $Msisdn, $BillRefNumber );
-
-            $CommandID = 121212;
-
-            $b2bTransaction=$mpesa->c2b(600141, $CommandID, 200, +254792107437,1212);
-
-            return "This is successfull.";
-    }
-
     public function lipaNaMpesaPassword()
     {
         $lipa_time = Carbon::rawParse('now')->format('YmdHms');
@@ -136,8 +49,8 @@ class PaymentsC2BController extends Controller
     }
     public function generateAccessToken()
     {
-        $consumer_key="i6X9jcGwwkk6LYiBnUGBYlV1YDU0Gujc";
-        $consumer_secret="Z2ylt0kTE5QqA20j";
+        $consumer_key="CxQOGfi82pAd7nUI73TiR0YshUN2pUAJ";
+        $consumer_secret="jeO1yPGrUptywyJw";
         $credentials = base64_encode($consumer_key.":".$consumer_secret);
         $url = "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials";
         $curl = curl_init();
