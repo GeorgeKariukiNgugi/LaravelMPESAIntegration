@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Safaricom Mobile Money Integration.
                 </div>
 
                 <div class="links">

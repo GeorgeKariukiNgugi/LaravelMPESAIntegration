@@ -17,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('v1/register/url', 'PaymentsC2BController@mpesaRegisterUrls');
+Route::post('v1/validation', 'PaymentsC2BController@mpesaValidation');
+Route::post('v1/transaction/confirmation', 'PaymentsC2BController@mpesaConfirmation');
+Route::post('makePayment','PaymentsC2BController@makePayment');
