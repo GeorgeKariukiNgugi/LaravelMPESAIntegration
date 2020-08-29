@@ -199,7 +199,7 @@ class PaymentsC2BController extends Controller
              'PartyA' => 254792107437, // replace this with your phone number
              'PartyB' => 174379,
              'PhoneNumber' => 254792107437, // replace this with your phone number
-             'CallBackURL' => 'https://53a21acaa793.ngrok.io/callBackForTKPush',
+             'CallBackURL' => 'https://safaricommobilemoneyintegration.georgekprojects.tk/api/callBackForTKPush',
              'AccountReference' => "H-lab tutorial",
              'TransactionDesc' => "Testing stk push on sandbox"
          ];
