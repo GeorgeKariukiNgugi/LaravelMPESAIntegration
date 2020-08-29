@@ -13,7 +13,7 @@ class CreatePaymentsC2BSTable extends Migration
      */
     public function up()
     {
-        Schema::create('payments_c2_b_s', function (Blueprint $table) {
+        Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->string('name', 100)->nullable()->default('text');
             $table->timestamps();
