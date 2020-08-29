@@ -91,6 +91,8 @@ class PaymentsC2BController extends Controller
             $CommandID = 121212;
 
             $b2bTransaction=$mpesa->c2b(600141, $CommandID, 200, +254792107437,1212);
+
+            return "This is successfull."
     }
 
     public function mpesaConfirmation(Request $request)
