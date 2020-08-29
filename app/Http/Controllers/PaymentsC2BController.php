@@ -36,7 +36,7 @@ class PaymentsC2BController extends Controller
             'PartyA' => 254792107437, // replace this with your phone number
             'PartyB' => 174379,
             'PhoneNumber' => 254792107437, // replace this with your phone number
-            'CallBackURL' => 'https://blog.hlab.tech/',
+            'CallBackURL' => 'https://safaricommobilemoneyintegration.georgekprojects.tk/api/v1/hlab/stk/pushCallBack',
             'AccountReference' => "H-lab tutorial",
             'TransactionDesc' => "Testing stk push on sandbox"
         ];
@@ -62,5 +62,11 @@ class PaymentsC2BController extends Controller
         $curl_response = curl_exec($curl);
         $access_token=json_decode($curl_response);
         return $access_token->access_token;
+    }
+
+    public function callBackForTheSTKPush(){
+        $PaymentsC2B = new PaymentsC2B();
+        $PaymentsC2B->name = "Name";
+        $PaymentsC2B->save();
     }
 }
