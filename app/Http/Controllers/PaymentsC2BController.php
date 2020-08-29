@@ -64,9 +64,10 @@ class PaymentsC2BController extends Controller
         return $access_token->access_token;
     }
 
-    public function callBackForTheSTKPush(){
+    public function callBackForTheSTKPush(Request $request){
         $PaymentsC2B = new PaymentsC2B();
-        $PaymentsC2B->name = "Name";
+        $content=json_decode($request->getContent());
+        $PaymentsC2B->name = $content->FirstName;
         $PaymentsC2B->save();
     }
 }

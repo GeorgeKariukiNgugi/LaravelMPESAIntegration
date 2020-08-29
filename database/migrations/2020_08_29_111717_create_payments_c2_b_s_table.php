@@ -15,7 +15,7 @@ class CreatePaymentsC2BSTable extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100)->nullable()->default('text');
+            $table->longText('name')->nullable();
             $table->timestamps();
         });
     }
