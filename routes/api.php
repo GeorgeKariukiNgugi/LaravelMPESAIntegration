@@ -22,3 +22,8 @@ Route::post('v1/register/url', 'PaymentsC2BController@mpesaRegisterUrls');
 Route::post('v1/validation', 'PaymentsC2BController@mpesaValidation');
 Route::post('v1/transaction/confirmation', 'PaymentsC2BController@mpesaConfirmation');
 Route::post('makePayment','PaymentsC2BController@makePayment');
+Route::post('callBackForTKPush','PaymentsC2BController@callBackForTKPush');
+Route::post('customerMpesaSTKPush','PaymentsC2BController@customerMpesaSTKPush');
+Route::post('v1/access/token', 'PaymentsC2BController@generateAccessToken');
+
+
