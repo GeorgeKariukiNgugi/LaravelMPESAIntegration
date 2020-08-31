@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\PaymentsC2B;
-
+use Illuminate\Http\Response;
 class newImplementation extends Controller
 {
     // ! creating the function that will be used to generate the access Tokens .  
@@ -46,7 +46,7 @@ class newImplementation extends Controller
 
         $content=json_decode($request->getContent());
         $payment = new PaymentsC2B();
-        $payment->name = $content->FirstName;
+        $payment->name = $content->FirstName.' '.$content->TransAmount;;
         $payment->save();
 
         return $response;
