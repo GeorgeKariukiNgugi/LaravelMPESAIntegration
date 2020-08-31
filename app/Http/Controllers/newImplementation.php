@@ -54,29 +54,21 @@ class newImplementation extends Controller
                     
     }
 
+    public function createValidationResponse($result_code, $result_description){
+        $result=json_encode(["ResultCode"=>$result_code, "ResultDesc"=>$result_description]);
+        $response = new Response();
+        $response->headers->set("Content-Type","application/json; charset=utf-8");
+        $response->setContent($result);
+        return $response;
+    }
+
     // ! creating the validation method. 
 
     public function validationMethod(Request $request){
 
-        // header('Content-type: application/json');
-
-        $response = '{
-            "ResultCode": 0,
-            "ResultDesc" "Confirmation Received Successfully."
-        }';
-
-        // ! getting the data. 
-
-        // $mpesaResponse = file_get_contents('php://input');
-        // $jsonMpesaResponse = json_decode($mpesaResponse, true);
-        // ! save the data to the database. 
-
-        $content=json_decode($request->getContent());
-        $payment = new PaymentsC2B();
-        $payment->name = $content->FirstName;
-        $payment->save();
-
-        return $response;
+        $result_code = "0";
+        $result_description = "Accepted validation request.";
+        return $this->createValidationResponse($result_code, $result_description);
 
     }
 
