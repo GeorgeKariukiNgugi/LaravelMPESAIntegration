@@ -11,8 +11,8 @@ class newImplementation extends Controller
 
     public function generateAccessTokens(){
         
-        $consumer_key="CxQOGfi82pAd7nUI73TiR0YshUN2pUAJ";
-        $consumer_secret="jeO1yPGrUptywyJw";
+        $consumer_key="i6X9jcGwwkk6LYiBnUGBYlV1YDU0Gujc";
+        $consumer_secret="Z2ylt0kTE5QqA20j";
         $credentials = base64_encode($consumer_key.":".$consumer_secret);
         $url = "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials";
         $curl = curl_init();
