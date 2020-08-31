@@ -43,7 +43,7 @@ class newImplementation extends Controller
         // $jsonMpesaResponse = json_decode($mpesaResponse, true);
 
         // ! save the data to the database. 
-        
+
         $content=json_decode($request->getContent());
         $payment = new PaymentsC2B();
         $payment->name = $content->FirstName;
@@ -56,7 +56,7 @@ class newImplementation extends Controller
 
     // ! creating the validation method. 
 
-    public function validationMethod(){
+    public function validationMethod(Request $request){
 
         // header('Content-type: application/json');
 
@@ -71,8 +71,9 @@ class newImplementation extends Controller
         // $jsonMpesaResponse = json_decode($mpesaResponse, true);
         // ! save the data to the database. 
 
+        $content=json_decode($request->getContent());
         $payment = new PaymentsC2B();
-        $payment->name = 'Dta';
+        $payment->name = $content->FirstName;
         $payment->save();
 
         return $response;
