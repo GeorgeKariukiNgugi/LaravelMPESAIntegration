@@ -18,9 +18,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('v1/access/token', 'PaymentsC2BController@generateAccessToken');
-Route::post('v1/hlab/stk/push', 'PaymentsC2BController@customerMpesaSTKPush');
-Route::post('v1/hlab/stk/pushCallBack', 'PaymentsC2BController@callBackForTheSTKPush');
+// ! THIS ARE THE NEW ROUTES FROM THE DOCUMENTATION. 
+
+Route::post('/accessToken','newImplementation@generateAccessTokens');
+Route::post('/validationURL','newImplementation@validationMethod');
+Route::post('/confirmationURL','newImplementation@confirmationMethod');
+Route::post('/registerURLS','newImplementation@registerURLS');
+
 
 
 
