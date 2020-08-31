@@ -29,7 +29,7 @@ class newImplementation extends Controller
 
     // ! creating the confirmation method.
 
-    public function confirmationMethod(){
+    public function confirmationMethod(Request $request){
         // header('Content-type: application/json');
 
         $response = '{
@@ -41,11 +41,12 @@ class newImplementation extends Controller
 
         // $mpesaResponse = file_get_contents('php://input');
         // $jsonMpesaResponse = json_decode($mpesaResponse, true);
-        
-        // ! save the data to the database. 
 
+        // ! save the data to the database. 
+        
+        $content=json_decode($request->getContent());
         $payment = new PaymentsC2B();
-        $payment->name = 'Dta';
+        $payment->name = $content->FirstName;
         $payment->save();
 
         return $response;
