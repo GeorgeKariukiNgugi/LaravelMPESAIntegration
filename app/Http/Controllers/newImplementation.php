@@ -34,8 +34,7 @@ class newImplementation extends Controller
 
         $response = '{
             "ResultCode": 0,
-            "ResultDec" "Confirmation Received Successfully."
-
+            "ResultDesc" "Confirmation Received Successfully."
         }';
 
         // ! getting the data. 
@@ -61,8 +60,7 @@ class newImplementation extends Controller
 
         $response = '{
             "ResultCode": 0,
-            "ResultDec" "Confirmation Received Successfully."
-
+            "ResultDesc" "Confirmation Received Successfully."
         }';
 
         // ! getting the data. 
