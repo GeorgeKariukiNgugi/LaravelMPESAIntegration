@@ -24,6 +24,8 @@ Route::post('/accessToken','newImplementation@generateAccessTokens');
 Route::post('/validationURL','newImplementation@validationMethod');
 Route::post('/confirmationURL','newImplementation@confirmationMethod');
 Route::post('/registerURLS','newImplementation@registerURLS');
+Route::post('/simulateTransaction','newImplementation@simulateTransaction');
+
 
 
 
