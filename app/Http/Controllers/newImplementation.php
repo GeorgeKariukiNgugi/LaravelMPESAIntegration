@@ -30,7 +30,7 @@ class newImplementation extends Controller
     // ! creating the confirmation method.
 
     public function confirmationMethod(){
-        header('Content-type: application/json');
+        // header('Content-type: application/json');
 
         $response = '{
             "ResultCode": 0,
@@ -39,12 +39,13 @@ class newImplementation extends Controller
 
         // ! getting the data. 
 
-        $mpesaResponse = file_get_contents('php://input');
-        $jsonMpesaResponse = json_decode($mpesaResponse, true);
+        // $mpesaResponse = file_get_contents('php://input');
+        // $jsonMpesaResponse = json_decode($mpesaResponse, true);
+        
         // ! save the data to the database. 
 
         $payment = new PaymentsC2B();
-        $payment->name = $jsonMpesaResponse;
+        $payment->name = 'Dta';
         $payment->save();
 
         return $response;
@@ -56,7 +57,7 @@ class newImplementation extends Controller
 
     public function validationMethod(){
 
-        header('Content-type: application/json');
+        // header('Content-type: application/json');
 
         $response = '{
             "ResultCode": 0,
@@ -65,12 +66,12 @@ class newImplementation extends Controller
 
         // ! getting the data. 
 
-        $mpesaResponse = file_get_contents('php://input');
-        $jsonMpesaResponse = json_decode($mpesaResponse, true);
+        // $mpesaResponse = file_get_contents('php://input');
+        // $jsonMpesaResponse = json_decode($mpesaResponse, true);
         // ! save the data to the database. 
 
         $payment = new PaymentsC2B();
-        $payment->name = $jsonMpesaResponse;
+        $payment->name = 'Dta';
         $payment->save();
 
         return $response;
