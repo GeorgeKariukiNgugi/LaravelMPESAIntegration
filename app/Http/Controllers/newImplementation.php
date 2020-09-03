@@ -116,7 +116,7 @@ class newImplementation extends Controller
                 //Fill in the request parameters with valid values
                'ShortCode' => '600754',
                'CommandID' => 'CustomerPayBillOnline',
-               'Amount' => '1800',
+               'Amount' => '2800',
                'Msisdn' => '254708374149',
                'BillRefNumber' => '00000'
         );
