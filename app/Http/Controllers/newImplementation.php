@@ -46,7 +46,8 @@ class newImplementation extends Controller
 
         $content=json_decode($request->getContent());
         $payment = new PaymentsC2B();
-        $payment->name = $content->FirstName.' Amount: '.$content->TransAmount.'  Bill Reference: '.$content->BillRefNumber;
+        $payment->name = $content->FirstName.' Amount: '.$content->TransAmount.'  Bill Reference: '.$content->BillRefNumber. 
+                        'Organizational Balance'. $content->OrgAccountBalance;
         $payment->save();
 
         return $response;
