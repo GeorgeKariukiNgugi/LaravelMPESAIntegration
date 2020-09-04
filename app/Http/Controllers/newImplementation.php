@@ -30,11 +30,7 @@ class newImplementation extends Controller
     // ! creating the confirmation method.
 
     public function confirmationMethod(Request $request){        
-        $response = '{
-            "ResultCode": 0,
-            "ResultDesc" "Confirmation Received Successfully."
-        }';
-        
+
         $content=json_decode($request->getContent());
         $mpesa_transaction = new PaymentsC2B();
         $mpesa_transaction->TransactionType = $content->TransactionType;
@@ -52,6 +48,10 @@ class newImplementation extends Controller
         $mpesa_transaction->LastName = $content->LastName;
         $mpesa_transaction->save();
 
+        //! Responding to the confirmation request
+        $response = new Response();
+        $response->headers->set("Content-Type","text/xml; charset=utf-8");
+        $response->setContent(json_encode(["C2BPaymentConfirmationResult"=>"Success"]));
         return $response;
 
                     
