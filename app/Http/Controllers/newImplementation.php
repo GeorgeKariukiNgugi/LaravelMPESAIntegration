@@ -29,26 +29,28 @@ class newImplementation extends Controller
 
     // ! creating the confirmation method.
 
-    public function confirmationMethod(Request $request){
-        // header('Content-type: application/json');
-
+    public function confirmationMethod(Request $request){        
         $response = '{
             "ResultCode": 0,
             "ResultDesc" "Confirmation Received Successfully."
         }';
-
-        // ! getting the data. 
-
-        // $mpesaResponse = file_get_contents('php://input');
-        // $jsonMpesaResponse = json_decode($mpesaResponse, true);
-
-        // ! save the data to the database. 
-
+        
         $content=json_decode($request->getContent());
-        $payment = new PaymentsC2B();
-        $payment->name = $content->FirstName.' Amount: '.$content->TransAmount.'  Bill Reference: '.$content->BillRefNumber. 
-                        'Organizational Balance'. $content->OrgAccountBalance;
-        $payment->save();
+        $mpesa_transaction = new PaymentsC2B();
+        $mpesa_transaction->TransactionType = $content->TransactionType;
+        $mpesa_transaction->TransID = $content->TransID;
+        $mpesa_transaction->TransTime = $content->TransTime;
+        $mpesa_transaction->TransAmount = $content->TransAmount;
+        $mpesa_transaction->BusinessShortCode = $content->BusinessShortCode;
+        $mpesa_transaction->BillRefNumber = $content->BillRefNumber;
+        $mpesa_transaction->InvoiceNumber = $content->InvoiceNumber;
+        $mpesa_transaction->OrgAccountBalance = $content->OrgAccountBalance;
+        $mpesa_transaction->ThirdPartyTransID = $content->ThirdPartyTransID;
+        $mpesa_transaction->MSISDN = $content->MSISDN;
+        $mpesa_transaction->FirstName = $content->FirstName;
+        $mpesa_transaction->MiddleName = $content->MiddleName;
+        $mpesa_transaction->LastName = $content->LastName;
+        $mpesa_transaction->save();
 
         return $response;
 
