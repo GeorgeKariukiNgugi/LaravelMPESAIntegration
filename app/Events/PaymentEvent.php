@@ -35,8 +35,18 @@ class PaymentEvent implements ShouldBroadcast
      *
      * @return \Illuminate\Broadcasting\Channel|array
      */
+    // public function broadcastOn()
+    // {
+    //     return new Channel('payment-channel');
+    // }
+
     public function broadcastOn()
-    {
-        return new Channel('payment-channel');
-    }
+  {
+      return ['payment-channel'];
+  }
+
+  public function broadcastAs()
+  {
+      return 'PaymentEvent';
+  }
 }
