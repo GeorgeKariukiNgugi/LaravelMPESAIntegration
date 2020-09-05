@@ -52,6 +52,7 @@ class newImplementation extends Controller
         $response = new Response();
         $response->headers->set("Content-Type","text/xml; charset=utf-8");
         $response->setContent(json_encode(["C2BPaymentConfirmationResult"=>"Success"]));
+        
         return $response;
 
                     
@@ -107,7 +108,7 @@ class newImplementation extends Controller
         return $curl_response;            
     }
 
-    public function simulateTransaction(){
+    public function simulateTransaction($amount){
         $url = 'https://sandbox.safaricom.co.ke/mpesa/c2b/v1/simulate';
   
         $curl = curl_init();
@@ -119,7 +120,7 @@ class newImplementation extends Controller
                 //Fill in the request parameters with valid values
                'ShortCode' => '600754',
                'CommandID' => 'CustomerPayBillOnline',
-               'Amount' => '2800',
+               'Amount' => $amount,
                'Msisdn' => '254708374149',
                'BillRefNumber' => '00000'
         );
