@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\PaymentsC2B;
 use Illuminate\Http\Response;
+use App\Events\PaymentEvent;
 class newImplementation extends Controller
 {
     // ! creating the function that will be used to generate the access Tokens .  
@@ -47,6 +48,9 @@ class newImplementation extends Controller
         $mpesa_transaction->MiddleName = $content->MiddleName;
         $mpesa_transaction->LastName = $content->LastName;
         $mpesa_transaction->save();
+
+        // ! fire the broadcast events. 
+        event(new PaymentEvent($content));
 
         //! Responding to the confirmation request
         $response = new Response();
