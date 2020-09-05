@@ -108,7 +108,8 @@ class newImplementation extends Controller
         return $curl_response;            
     }
 
-    public function simulateTransaction($amount){
+    public function simulateTransaction(Request $request){
+
         $url = 'https://sandbox.safaricom.co.ke/mpesa/c2b/v1/simulate';
   
         $curl = curl_init();
@@ -120,7 +121,7 @@ class newImplementation extends Controller
                 //Fill in the request parameters with valid values
                'ShortCode' => '600754',
                'CommandID' => 'CustomerPayBillOnline',
-               'Amount' => $amount,
+               'Amount' => $request->amount,
                'Msisdn' => '254708374149',
                'BillRefNumber' => '00000'
         );
