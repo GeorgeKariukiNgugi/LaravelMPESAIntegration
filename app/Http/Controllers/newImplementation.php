@@ -60,7 +60,7 @@ class newImplementation extends Controller
 
     public function callBackForTheSTKPush(Request $request){
 
-        $content = json_decode($request->getContent());
+        $content = json_encode($request->getContent());
         $mpesa_transaction = new PaymentsC2B();
         // $mpesa_transaction->TransAmount = $content->Body->stkCallback->MerchantRequestID;
         $mpesa_transaction->TransID ="Trans Id.";
@@ -80,7 +80,7 @@ class newImplementation extends Controller
 
         // Storage::put('attempt3.txt', $content);
         // Storage::disk('local')->put('file.txt',  $content->all());
-        Storage::put('attempt3.txt', $request->getContent());
+        Storage::put('attempt3.txt', $content);
         // ! fire the broadcast events. 
         event(new PaymentEvent($content));
 
