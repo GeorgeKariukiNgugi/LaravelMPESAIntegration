@@ -118,6 +118,7 @@ class newImplementation extends Controller
     {
 
         $content = json_decode($request->getContent());
+        $contentData = $request->getContent();
         $mpesa_transaction = new PaymentsC2B();
         $mpesa_transaction->TransactionType = $content->TransactionType;
         $mpesa_transaction->TransID = $content->TransID;
@@ -135,7 +136,7 @@ class newImplementation extends Controller
         // $mpesa_transaction->TransactionType = 'Lipa Na MPESA.';
         $mpesa_transaction->save();
 
-        Storage::put('attempt3.txt', json_decode($request->getContent()));
+        Storage::put('attempt3.txt', gettype($contentData));
 
         // ! fire the broadcast events. 
         event(new PaymentEvent($content));
