@@ -64,7 +64,7 @@ class newImplementation extends Controller
         $mpesa_transaction = new PaymentsC2B();
         // $mpesa_transaction->TransAmount = $content->Body->stkCallback->MerchantRequestID;
         $mpesa_transaction->TransID ="Trans Id.";
-
+        $contentMpesa = $request->getContent();
         // $mpesa_transaction->TransTime = $content->TransTime;
         // $mpesa_transaction->TransAmount = $content->TransAmount;
         // $mpesa_transaction->BusinessShortCode = $content->BusinessShortCode;
@@ -80,7 +80,7 @@ class newImplementation extends Controller
 
         // Storage::put('attempt3.txt', $content);
         // Storage::disk('local')->put('file.txt',  $content->all());
-        Storage::put('attempt3.txt', $request['Body']);
+        Storage::put('attempt3.txt', $content);
         // ! fire the broadcast events. 
         event(new PaymentEvent($content));
 
