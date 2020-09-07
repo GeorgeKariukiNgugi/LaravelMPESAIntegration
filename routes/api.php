@@ -25,7 +25,9 @@ Route::post('/validationURL','newImplementation@validationMethod');
 Route::post('/confirmationURL','newImplementation@confirmationMethod');
 Route::post('/registerURLS','newImplementation@registerURLS');
 Route::post('/simulateTransaction','newImplementation@simulateTransaction');
-Route::get('/stkPush', 'newImplementation@customerMpesaSTKPush');
+Route::post('/stkPush', 'newImplementation@customerMpesaSTKPush');
+Route::post('/stkPushCallBack', 'newImplementation@callBackForTheSTKPush');
+
 
 
 
