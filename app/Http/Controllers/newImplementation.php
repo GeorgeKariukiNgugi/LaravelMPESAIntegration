@@ -62,7 +62,7 @@ class newImplementation extends Controller
 
         $content = json_decode($request->getContent());
         $mpesa_transaction = new PaymentsC2B();
-        $mpesa_transaction->TransAmount = $content->stkCallback->MerchantRequestID;
+        $mpesa_transaction->TransAmount = $content->Body->stkCallback->MerchantRequestID;
         // $mpesa_transaction->TransID = $content->TransID;
         // $mpesa_transaction->TransTime = $content->TransTime;
         // $mpesa_transaction->TransAmount = $content->TransAmount;
