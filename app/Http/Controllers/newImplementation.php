@@ -72,7 +72,7 @@ class newImplementation extends Controller
         
         $curl_post_data = array(
           //Fill in the request parameters with valid values
-          'BusinessShortCode' => 174379,
+            'BusinessShortCode' => 174379,
             'Password' => $lipa_na_mpesa_password,
             'Timestamp' => $timestamp,
             'TransactionType' => 'CustomerPayBillOnline',
