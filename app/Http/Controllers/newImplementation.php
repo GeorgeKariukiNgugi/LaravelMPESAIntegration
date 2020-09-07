@@ -41,10 +41,10 @@ class newImplementation extends Controller
             'Password' => $this->lipaNaMpesaPassword(),
             'Timestamp' => Carbon::rawParse('now')->format('YmdHms'),
             'TransactionType' => 'CustomerPayBillOnline',
-            'Amount' => 50,
-            'PartyA' => 254792107437, // replace this with your phone number
+            'Amount' => 5,
+            'PartyA' => 254708752221, // replace this with your phone number
             'PartyB' => 174379,
-            'PhoneNumber' => 254792107437, // replace this with your phone number
+            'PhoneNumber' => 254708752221, // replace this with your phone number
             'CallBackURL' => 'https://safaricommobilemoneyintegration.georgekprojects.tk/api/stkPushCallBack',
             'AccountReference' => "Sample",
             'TransactionDesc' => "Testing stk push on sandbox"
