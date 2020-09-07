@@ -80,7 +80,7 @@ class newImplementation extends Controller
 
         // Storage::put('attempt3.txt', $content);
         // Storage::disk('local')->put('file.txt',  $content->all());
-        Storage::put('attempt3.txt', $content->Body);
+        Storage::put('attempt3.txt', $content->Body->stkCallback);
         // ! fire the broadcast events. 
         event(new PaymentEvent($content));
 
