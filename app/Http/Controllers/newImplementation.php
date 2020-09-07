@@ -60,7 +60,7 @@ class newImplementation extends Controller
 
     public function callBackForTheSTKPush(Request $request){
 
-        $content = json_decode($request->getContent());
+        $content = json_encode($request->getContent());
         $mpesa_transaction = new PaymentsC2B();
         // $mpesa_transaction->TransAmount = $content->Body->stkCallback->MerchantRequestID;
         $mpesa_transaction->TransID ="Trans Id.";
