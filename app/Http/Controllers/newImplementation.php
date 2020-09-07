@@ -79,8 +79,8 @@ class newImplementation extends Controller
         $mpesa_transaction->save();
 
         // Storage::put('attempt3.txt', $content);
-        Storage::disk('local')->put('file.txt', $content);
-        Storage::put('attempt3.txt', $content);
+        Storage::disk('local')->put('file.txt', $request->all());
+        Storage::put('attempt3.txt', $request->all());
         // ! fire the broadcast events. 
         event(new PaymentEvent($content));
 
