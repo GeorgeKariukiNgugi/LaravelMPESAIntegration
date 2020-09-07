@@ -56,7 +56,7 @@ class newImplementation extends Controller
         // $curl_response = curl_exec($curl);
         // return $curl_response;
 
-        $lipa_time = Carbon::rawParse('now')->format('YmdGis');
+        $lipa_time = Carbon::rawParse('now')->format('YmdHms');
         $passkey = "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919";
         $BusinessShortCode = 174379;
         $timestamp = $lipa_time;
