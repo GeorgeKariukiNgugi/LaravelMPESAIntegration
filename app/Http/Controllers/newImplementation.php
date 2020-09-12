@@ -79,7 +79,7 @@ class newImplementation extends Controller
         // $mpesa_transaction->LastName = $content->LastName;        
         $mpesa_transaction->save();
        
-        Storage::put('attempt3.txt',gettype($content) );
+        Storage::put('attempt3.txt',"Sent." );
         // ! fire the broadcast events. 
         event(new PaymentEvent($content));
 
