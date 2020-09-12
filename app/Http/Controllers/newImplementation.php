@@ -66,7 +66,7 @@ class newImplementation extends Controller
         // $mpesa_transaction->TransID = 'TransId';
         // $contentMpesa = $request->getContent();
         // $mpesa_transaction->TransTime = $content->TransTime;
-        // $mpesa_transaction->TransAmount = $content->TransAmount;
+        $mpesa_transaction->TransAmount = $content->Body->CallbackMetadata->Item[0]->Value;
         // $mpesa_transaction->BusinessShortCode = $content->BusinessShortCode;
         // $mpesa_transaction->BillRefNumber = $content->BillRefNumber;
         $mpesa_transaction->InvoiceNumber = $content->Body->stkCallback->CheckoutRequestID;
