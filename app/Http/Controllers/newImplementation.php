@@ -134,7 +134,7 @@ class newImplementation extends Controller
         // $mpesa_transaction->TransactionType = 'Lipa Na MPESA.';
         $mpesa_transaction->save();
 
-        Storage::put('attempt3.txt', gettype($contentData));
+        Storage::put('attempt3.txt', $contentData);
 
         // Storage::put('attempt3.txt', $contentMpesa);
         // ! fire the broadcast events. 
