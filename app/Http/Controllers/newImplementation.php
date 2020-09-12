@@ -136,7 +136,7 @@ class newImplementation extends Controller
 
         Storage::put('attempt3.txt', gettype($contentData));
 
-        Storage::put('attempt3.txt', $contentMpesa);
+        // Storage::put('attempt3.txt', $contentMpesa);
         // ! fire the broadcast events. 
         event(new PaymentEvent($content));
 
