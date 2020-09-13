@@ -74,7 +74,7 @@ class newImplementation extends Controller
 
         $mpesa_transaction->save();
        
-        Storage::put('attempt3.txt',$content->Body->stkCallback->CallbackMetadata);
+        Storage::put('attempt3.txt',"Test1.");
         // ! fire the broadcast events. 
         event(new PaymentEvent($content));
 
