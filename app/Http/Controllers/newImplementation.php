@@ -68,13 +68,13 @@ class newImplementation extends Controller
             $mpesa_transaction->MerchantRequestID = $content->Body->stkCallback->MerchantRequestID;
             $mpesa_transaction->CheckoutRequestID = $content->Body->stkCallback->CheckoutRequestID;
             // $mpesa_transaction->Amount = $content->Body->stkCallback->CallbackMetadata->Item[0]->Value;
-            $mpesa_transaction->MpesaReceiptNumber = $content->Body->stkCallback->CallbackMetadata->Item[1]->Value;
-            $mpesa_transaction->TransactionDate = $content->Body->stkCallback->CallbackMetadata->Item[3]->Value;
-            $mpesa_transaction->PhoneNumber = $content->Body->stkCallback->CallbackMetadata->Item[4]->Value;
+            // $mpesa_transaction->MpesaReceiptNumber = $content->Body->stkCallback->CallbackMetadata->Item[1]->Value;
+            // $mpesa_transaction->TransactionDate = $content->Body->stkCallback->CallbackMetadata->Item[3]->Value;
+            // $mpesa_transaction->PhoneNumber = $content->Body->stkCallback->CallbackMetadata->Item[4]->Value;
 
         $mpesa_transaction->save();
        
-        Storage::put('attempt3.txt',$content->Body->stkCallback->CallbackMetadata->Item[0]->Value);
+        Storage::put('attempt3.txt',$content->Body->stkCallback->CallbackMetadata);
         // ! fire the broadcast events. 
         event(new PaymentEvent($content));
 
