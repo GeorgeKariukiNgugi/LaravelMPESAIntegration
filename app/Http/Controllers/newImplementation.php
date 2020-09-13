@@ -69,8 +69,8 @@ class newImplementation extends Controller
             $mpesa_transaction->CheckoutRequestID = $content->Body->stkCallback->CheckoutRequestID;
             // $mpesa_transaction->Amount = $content->Body->stkCallback->CallbackMetadata->Item[0]->Value;
             $mpesa_transaction->MpesaReceiptNumber = $content->Body->stkCallback->CallbackMetadata->Item[1]->Value;
-            $mpesa_transaction->TransactionDate = $content->Body->stkCallback->CallbackMetadata->Item[2]->Value;
-            $mpesa_transaction->PhoneNumber = $content->Body->stkCallback->CallbackMetadata->Item[3]->Value;
+            $mpesa_transaction->TransactionDate = $content->Body->stkCallback->CallbackMetadata->Item[3]->Value;
+            $mpesa_transaction->PhoneNumber = $content->Body->stkCallback->CallbackMetadata->Item[4]->Value;
 
         $mpesa_transaction->save();
        
