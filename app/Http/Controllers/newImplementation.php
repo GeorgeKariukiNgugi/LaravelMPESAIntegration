@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\PaymentsC2B;
+use App\LipaNaMpesa;
 use Illuminate\Http\Response;
 use App\Events\PaymentEvent;
 use Carbon\Carbon;
@@ -60,22 +61,17 @@ class newImplementation extends Controller
 
     public function callBackForTheSTKPush(Request $request){
         $content = json_decode($request->getContent());
-        $mpesa_transaction = new PaymentsC2B();
-        // $mpesa_transaction->TransAmount = $content->Body->stkCallback->MerchantRequestID;
-        $mpesa_transaction->TransID = $content->Body->stkCallback->MerchantRequestID;
-        // $mpesa_transaction->TransID = 'TransId';
-        // $contentMpesa = $request->getContent();
-        // $mpesa_transaction->TransTime = $content->TransTime;
-        $mpesa_transaction->TransAmount = $content->Body->stkCallback->CallbackMetadata->Item[0]->Value;
-        // $mpesa_transaction->BusinessShortCode = $content->BusinessShortCode;
-        // $mpesa_transaction->BillRefNumber = $content->BillRefNumber;
-        $mpesa_transaction->InvoiceNumber = $content->Body->stkCallback->CheckoutRequestID;
-        // $mpesa_transaction->OrgAccountBalance = $content->OrgAccountBalance;
-        // $mpesa_transaction->ThirdPartyTransID = $content->ThirdPartyTransID;
-        // $mpesa_transaction->MSISDN = $content->MSISDN;
-        // $mpesa_transaction->FirstName = $content->FirstName;
-        // $mpesa_transaction->MiddleName = $content->MiddleName;
-        // $mpesa_transaction->LastName = $content->LastName;        
+        $mpesa_transaction = new LipaNaMpesa();
+        
+            // ! saving the data to the database. 
+
+            $mpesa_transaction->MerchantRequestID = $content->Body->stkCallback->MerchantRequestID;
+            $mpesa_transaction->CheckoutRequestID = $content->Body->stkCallback->CheckoutRequestID;
+            $mpesa_transaction->Amount = $content->Body->stkCallback->CallbackMetadata->Item[0]->Value;
+            $mpesa_transaction->MpesaReceiptNumber = $content->Body->stkCallback->CallbackMetadata->Item[1]->Value;
+            $mpesa_transaction->TransactionDate = $content->Body->stkCallback->CallbackMetadata->Item[2]->Value;
+            $mpesa_transaction->PhoneNumber = $content->Body->stkCallback->CallbackMetadata->Item[3]->Value;
+
         $mpesa_transaction->save();
        
         Storage::put('attempt3.txt',$content->Body->stkCallback->MerchantRequestID);
