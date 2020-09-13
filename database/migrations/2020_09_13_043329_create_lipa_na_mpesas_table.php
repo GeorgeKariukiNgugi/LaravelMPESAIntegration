@@ -17,7 +17,7 @@ class CreateLipaNaMpesasTable extends Migration
             $table->id();
             $table->longText('MerchantRequestID')->nullable();
             $table->longText('CheckoutRequestID')->nullable();
-            $table->bigInteger('Amount')->nullable();
+            $table->float('Amount')->nullable();
             $table->longText('MpesaReceiptNumber')->nullable();
             $table->longText('TransactionDate')->nullable();
             $table->longText('PhoneNumber')->nullable();
