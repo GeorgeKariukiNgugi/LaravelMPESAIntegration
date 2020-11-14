@@ -43,9 +43,9 @@ class newImplementation extends Controller
             'Timestamp' => Carbon::rawParse('now')->format('YmdHms'),
             'TransactionType' => 'CustomerPayBillOnline',
             'Amount' => 1,
-            'PartyA' => 254708752221, // replace this with your phone number
+            'PartyA' => 254115335486, // replace this with your phone number
             'PartyB' => 174379,
-            'PhoneNumber' => 254708752221, // replace this with your phone number
+            'PhoneNumber' => 254115335486, // replace this with your phone number
             'CallBackURL' => 'https://safaricommobilemoneyintegration.georgekprojects.tk/api/stkPushCallBack',
             'AccountReference' => "Sample",
             'TransactionDesc' => "Testing stk push on sandbox"
