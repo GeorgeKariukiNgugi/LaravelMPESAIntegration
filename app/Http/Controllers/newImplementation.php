@@ -204,7 +204,7 @@ class newImplementation extends Controller
         $curl_post_data = array(
             'ShortCode' => '600754',
             'CommandID' => 'CustomerPayBillOnline',
-            'Amount' => $request->amount,
+            'Amount' => 10,
             'Msisdn' => '254708374149',
             'BillRefNumber' => '00000'
         );
