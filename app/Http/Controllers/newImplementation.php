@@ -205,7 +205,7 @@ class newImplementation extends Controller
             'ShortCode' => '600754',
             'CommandID' => 'CustomerPayBillOnline',
             'Amount' => 10,
-            'Msisdn' => '254708374149',
+            'Msisdn' => '254792107437',
             'BillRefNumber' => '00000'
         );
 
