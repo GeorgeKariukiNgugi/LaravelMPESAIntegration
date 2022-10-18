@@ -43,11 +43,11 @@ class newImplementation extends Controller
             'Timestamp' => Carbon::rawParse('now')->format('YmdHms'),
             'TransactionType' => 'CustomerPayBillOnline',
             'Amount' => 1,
-            'PartyA' => 254115335486, // replace this with your phone number
+            'PartyA' => 254792107437, // replace this with your phone number
             'PartyB' => 174379,
-            'PhoneNumber' => 254115335486, // replace this with your phone number
+            'PhoneNumber' => 254792107437, // replace this with your phone number
             // 254115335486
-            'CallBackURL' => 'https://safaricommobilemoneyintegration.georgekprojects.tk/api/stkPushCallBack',
+            'CallBackURL' => 'https://cybershujaa.ml/api/stkPushCallBack',
             'AccountReference' => "Sample",
             'TransactionDesc' => "Testing stk push on sandbox"
         ];
@@ -178,8 +178,8 @@ class newImplementation extends Controller
         $curl_post_data = array(
             'ShortCode' => '600754',
             'ResponseType' => 'Confirmed',
-            'ConfirmationURL' => 'https://safaricommobilemoneyintegration.georgekprojects.tk/api/confirmationURL',
-            'ValidationURL' => 'https://safaricommobilemoneyintegration.georgekprojects.tk/api/validationURL',
+            'ConfirmationURL' => 'https://cybershujaa.ml/api/confirmationURL',
+            'ValidationURL' => 'https://cybershujaa.ml/api/validationURL',
         );
 
         $data_string = json_encode($curl_post_data);
